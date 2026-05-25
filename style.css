@@ -1,0 +1,308 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 10px;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  /* background-color: #454545 */
+  background-color: #050505;
+  transition: background-color 2s ease;
+}
+
+section {
+  margin: 5px auto;
+}
+
+article {
+  background: rgba(0, 255, 255, 0.052);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 16px) 0,
+    100% 16px,
+    100% 100%,
+    16px 100%,
+    0 calc(100% - 16px)
+  );
+  filter: drop-shadow(2px 2px 3px #00e5ff81);
+  box-shadow: 5px 5px 5px #00e5ff;
+  margin: 15px 5px;
+  padding: 5px;
+  position: relative;
+}
+
+article::before {
+  /* content: ''; */
+  pointer-events: none;
+  inset: 0;
+  /* position: absolute,relative,fixed,sticky;が設定されて
+  　　いるとき、top,right,bottom,leftをまとめて指定できるプロパティ。
+     `0`で親要素いっぱいに広げる。 */
+  padding: 1px;
+  background: #00e5ff;
+}
+
+article::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  clip-path: inherit;
+  /* inheritは親要素に設定されているclip-pathの値を子要素にも
+     引き継がせる設定 */
+}
+
+#title,
+#name {
+  text-align: center;
+  margin-top: 2%;
+}
+
+h1,
+h2,
+h3 {
+  color: #fff;
+  background:
+    repeating-linear-gradient(
+      #f8ef3f80 1px,
+      transparent 2px,
+      #00ffff80 3px,
+      transparent 2px
+    ),
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      transparent 20%,
+      #d4ff00 50%,
+      transparent 80%,
+      transparent 100%
+    );
+  color: #0e0e0e;
+}
+
+h3 {
+  text-align: center;
+}
+
+h4 {
+  margin-left: 10px;
+  color: rgba(0, 250, 250, 0.9);
+}
+
+h5 {
+  margin-top: 10px;
+  color: rgba(0, 250, 250, 0.9);
+}
+
+p {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  color: rgba(0, 250, 250, 0.9);
+}
+
+p::before {
+  color: #00e5ff;
+  transform: translate(-2px, 0);
+  position: absolute;
+  clip-path: inset(0 0 55% 0);
+}
+
+p::after {
+  color: #ff2a6d;
+  transform: translate(5px, 0);
+  position: absolute;
+  clip-path: inset(55% 0 0 0);
+}
+
+ul {
+  padding: 20px;
+  padding-left: 30px;
+  color: rgba(0, 250, 250, 0.9);
+}
+
+.listLevel_1 {
+  font-weight: bold;
+  list-style: none;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 15px;
+  background-color: #1f2728;
+  border: solid 1px #0037ff;
+  box-shadow: inset 0px 0px 15px #0037ff;
+}
+
+.buttons,
+.likeButtons {
+  text-align: center;
+  margin: auto;
+}
+
+#likeButton {
+  width: 50px;
+  height: 30px;
+  vertical-align: middle;
+  transition-property: background-color;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in;
+}
+
+#likeButton:active {
+  transition-property: background-color;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in;
+}
+
+#likeCount {
+  margin: auto;
+  padding: 3px;
+  border: solid 1px;
+  border-radius: 3px;
+  line-height: 30px;
+  font-size: large;
+  text-align: center;
+  color: rgb(0, 230, 255);
+  vertical-align: middle; /*ボタンと高さを揃える*/
+}
+
+button {
+  width: 100px;
+  height: 30px;
+  margin: 5px;
+  border-radius: 3px;
+  background-color: transparent;
+  border: solid 2px rgb(0, 230, 255);
+  color: rgb(0, 230, 255);
+  box-shadow:
+    0px 0px 5px rgb(13, 82, 84),
+    0px 0px 10px rgba(0, 250, 250, 1),
+    0px 0px 15px rgba(0, 148, 171, 0.586);
+  transition: 250ms ease;
+}
+
+button:hover {
+  width: 100px;
+  height: 30px;
+  margin: 5px;
+  border-radius: 3px;
+  background-color: rgb(0, 230, 255);
+  border: solid rgb(0, 230, 255);
+  color: #222;
+  box-shadow:
+    0px 0px 5px rgb(13, 82, 84),
+    0px 0px 10px rgba(0, 250, 250, 1),
+    0px 0px 15px rgba(0, 148, 171, 0.586);
+  transition: 250ms ease;
+}
+
+button:active {
+  width: 100px;
+  height: 30px;
+  margin: 5px;
+  border-radius: 3px;
+  background-color: transparent;
+  border: solid rgb(0, 230, 255);
+  color: rgb(0, 230, 255);
+  box-shadow:
+    0px 0px 5px rgb(13, 82, 84),
+    0px 0px 10px rgba(0, 250, 250, 1),
+    0px 0px 15px rgba(0, 148, 171, 0.586);
+}
+
+#futureButton_forFuture {
+  width: 250px;
+}
+
+.clock {
+  color: #fff;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #00e5ff44;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 5px) 0,
+    100% 5px,
+    100% 100%,
+    5px 100%,
+    0 calc(100% - 5px)
+  );
+  padding: 3px;
+}
+
+.yourname {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  background:
+    repeating-linear-gradient(
+      #00ffff80 1px,
+      transparent 2px,
+      #f8ef3f80 3px,
+      transparent 2px
+    ),
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      transparent 20%,
+      #d4ff00 50%,
+      transparent 80%,
+      transparent 100%
+    );
+  color: #0e0e0e;
+}
+
+.yourname input {
+  width: 200px;
+  height: 30px;
+  margin: 2px;
+  text-align: center;
+}
+
+.yourname #enterButton {
+  width: 60px;
+
+  border: solid 2px #00e5ff;
+  background-color: #005f6a83;
+
+  color: #00e5ff;
+  font-weight: bolder;
+  text-align: center;
+
+  background-image: linear-gradient(
+    to right,
+    #00e5ff 0%,
+    #00e5ff 50%,
+    transparent 50%,
+    transparent 100%
+  );
+
+  background-size: 200% 100%;
+  background-position: 100% 0;
+
+  transition:
+    background-position 0.2s ease,
+    color 0.3s ease;
+
+  text-decoration: none;
+}
+
+.yourname #enterButton:hover {
+  background-position: 0 0;
+  color: #fff;
+}
